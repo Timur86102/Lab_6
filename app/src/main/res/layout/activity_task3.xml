@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Task3">
+
+    <LinearLayout
+        android:id="@+id/layoutInput"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/layoutOperators"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/printOperator"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/layoutInputFields"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/input1"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Введите число"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/input2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Введите число"
+                android:inputType="number" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutOperators"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/layoutOutput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutInput">
+
+        <Button
+            android:id="@+id/plus"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="8dp"
+            android:onClick="operation"
+            android:text="+"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/minus"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="8dp"
+            android:onClick="operation"
+            android:text="-"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/multiplication"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="8dp"
+            android:onClick="operation"
+            android:text="*"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/division"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="operation"
+            android:text="/"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutOutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/closeTask3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutOperators">
+
+        <TextView
+            android:id="@+id/equals"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="="
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:gravity="center_vertical"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/closeTask3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:onClick="close"
+        android:text="Закрыть"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutOutput" />
+</androidx.constraintlayout.widget.ConstraintLayout>
